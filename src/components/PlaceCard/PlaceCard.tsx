@@ -15,7 +15,7 @@ export const PlaceCard = ({ place, image, price, description }: Props) => (
       </Badge>
     </Group>
 
-    <Text lineClamp={1} size="sm" color="dimmed">
+    <Text lineClamp={3} size="sm" color="dimmed">
       {description}
     </Text>
 
