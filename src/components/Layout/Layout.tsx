@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import React, { useState } from 'react';
-import { AppShell, Container, Navbar, Center, Tooltip, UnstyledButton, Stack } from '@mantine/core';
-import { TablerIcon, IconLogout } from '@tabler/icons';
+import { AppShell, Box, Navbar, Center, Tooltip, UnstyledButton, Stack } from '@mantine/core';
+import { TablerIcon } from '@tabler/icons';
 
 import Logo from 'assets/images/logo.svg';
+import { ColorSchemeToggle } from 'components/ColorSchemeToggle/ColorSchemeToggle';
 
 import { sidebarData } from './sidebarData';
 import useStyles from './Layout.styles';
@@ -50,7 +51,7 @@ export const Sidebar = () => {
       </Navbar.Section>
       <Navbar.Section>
         <Stack justify="center" spacing={0}>
-          <NavbarLink icon={IconLogout} label="Logout" />
+          <ColorSchemeToggle />
         </Stack>
       </Navbar.Section>
     </Navbar>
@@ -59,6 +60,6 @@ export const Sidebar = () => {
 
 export const Layout = ({ children }: { children: React.ReactNode }) => (
   <AppShell padding="md" navbar={<Sidebar />}>
-    <Container>{children}</Container>
+    <Box px="lg">{children}</Box>
   </AppShell>
 );
