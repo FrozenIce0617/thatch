@@ -18,3 +18,8 @@
 ## Preview
 
 https://thatch.netlify.app/
+
+## NOTE
+
+Currently I'm using [loremflickr](https://loremflickr.com) for randomized images, but it requires random argument.
+So I generated random argumented with `Math.random()` function, so the images re-renders every time for every single actions like theme toggling, search, etc.
