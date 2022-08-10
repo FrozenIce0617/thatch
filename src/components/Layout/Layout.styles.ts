@@ -5,8 +5,8 @@ export default createStyles((theme) => ({
     backgroundColor: theme.fn.variant({ variant: 'filled', color: theme.primaryColor }).background,
   },
   link: {
-    width: 50,
-    height: 50,
+    width: 40,
+    height: 40,
     borderRadius: theme.radius.md,
     display: 'flex',
     alignItems: 'center',

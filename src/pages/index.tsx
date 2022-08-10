@@ -30,11 +30,12 @@ const HomePage = () => {
   return (
     <Box py={20}>
       <Group position="apart" mt="md" mb="md">
-        <Title order={2}>Feed</Title>
+        <Title order={3}>Feed</Title>
         <Input
           radius="xl"
+          size="xs"
           placeholder="Search ..."
-          icon={<IconSearch />}
+          icon={<IconSearch stroke={1} size={16} />}
           value={searchQuery}
           onChange={onHandleSearch}
         />
@@ -50,7 +51,7 @@ const HomePage = () => {
               <Title>No Data</Title>
             </Center>
           ) : (
-            <Grid>
+            <Grid gutter={24}>
               {filteredPlaces.map(({ id, ...rest }) => (
                 <Grid.Col key={id} xs={6} md={6} lg={4} xl={3}>
                   <PlaceCard {...rest} />

@@ -1,10 +1,10 @@
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React from 'react';
 import { AppShell, Box, Navbar, Center, Tooltip, UnstyledButton, Stack } from '@mantine/core';
 import { TablerIcon } from '@tabler/icons';
 
 import Logo from 'assets/images/logo.svg';
-import { ColorSchemeToggle } from 'components/ColorSchemeToggle/ColorSchemeToggle';
+import { ColorSchemeToggle } from 'components/ColorSchemeToggle';
 
 import { sidebarData } from './sidebarData';
 import useStyles from './Layout.styles';
@@ -30,22 +30,16 @@ function NavbarLink({ icon: Icon, label, active, onClick }: NavbarLinkProps) {
 
 export const Sidebar = () => {
   const { classes } = useStyles();
-  const [active, setActive] = useState(0);
 
   return (
-    <Navbar className={classes.navbar} width={{ base: 80 }} p="md">
+    <Navbar className={classes.navbar} width={{ base: 70 }} p="md">
       <Center>
         <Image src={Logo} width={30} height={30} />
       </Center>
       <Navbar.Section grow mt={50}>
         <Stack justify="center" spacing={4}>
           {sidebarData.map((link, index) => (
-            <NavbarLink
-              {...link}
-              key={link.label}
-              active={index === active}
-              onClick={() => setActive(index)}
-            />
+            <NavbarLink {...link} key={link.label} active={index === 0} />
           ))}
         </Stack>
       </Navbar.Section>

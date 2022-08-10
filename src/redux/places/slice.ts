@@ -4,7 +4,7 @@ import { getPlaceData } from './actions';
 import { PlaceInfo, State } from './types';
 
 const initialState: State = {
-  isLoading: false,
+  isLoading: true,
   placeData: [],
   error: false,
 };
