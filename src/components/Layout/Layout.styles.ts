@@ -1,35 +1,36 @@
 import { createStyles } from '@mantine/core';
 
 export default createStyles((theme) => ({
+  header: {
+    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0],
+  },
   navbar: {
-    backgroundColor: theme.fn.variant({ variant: 'filled', color: theme.primaryColor }).background,
+    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0],
+  },
+  logo: {
+    borderRadius: '50%',
+  },
+  navLink: {
+    textDecoration: 'none',
+    '&:hover': {
+      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+    },
+  },
+  headerItem: {
+    flex: 1,
   },
   link: {
-    width: 40,
-    height: 40,
-    borderRadius: theme.radius.md,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: theme.white,
-    opacity: 0.85,
-
-    '&:hover': {
-      opacity: 1,
-      backgroundColor: theme.fn.lighten(
-        theme.fn.variant({ variant: 'filled', color: theme.primaryColor }).background,
-        0.1
-      ),
-    },
+    display: 'block',
+    width: '100%',
+    padding: theme.spacing.xs,
+    borderRadius: theme.radius.sm,
+    color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.black,
   },
 
   active: {
     opacity: 1,
-    '&, &:hover': {
-      backgroundColor: theme.fn.lighten(
-        theme.fn.variant({ variant: 'filled', color: theme.primaryColor }).background,
-        0.15
-      ),
+    '&:hover': {
+      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
     },
   },
 }));

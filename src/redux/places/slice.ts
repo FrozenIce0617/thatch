@@ -20,12 +20,19 @@ const slice = createSlice({
         isLoading: true,
         error: false,
       }))
-      .addCase(getPlaceData.fulfilled, (state, { payload }: PayloadAction<PlaceInfo[]>) => ({
-        ...state,
-        isLoading: false,
-        placeData: payload,
-        error: false,
-      }))
+      .addCase(getPlaceData.fulfilled, (state, { payload }: PayloadAction<PlaceInfo[]>) => {
+        const parsedData = payload.map((item: PlaceInfo) => ({
+          ...item,
+          image: `${item.image}?random=${parseInt((Math.random() * 100).toString(), 10)}`,
+        }));
+
+        return {
+          ...state,
+          isLoading: false,
+          placeData: parsedData,
+          error: false,
+        };
+      })
       .addCase(getPlaceData.rejected, (state) => ({
         ...state,
         isLoading: false,

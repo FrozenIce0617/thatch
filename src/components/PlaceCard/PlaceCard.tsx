@@ -5,11 +5,7 @@ import { Props } from './types';
 export const PlaceCard = ({ place, image, price, description }: Props) => (
   <Card shadow="sm" p="lg" radius="md" withBorder>
     <Card.Section>
-      <Image
-        src={`${image}?random=${parseInt((Math.random() * 100).toString(), 10)}`}
-        alt={place}
-        height={160}
-      />
+      <Image src={image} alt={place} height={160} />
     </Card.Section>
 
     <Group position="apart" mt="md" mb="xs">
